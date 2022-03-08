@@ -1,17 +1,20 @@
 {
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
-    "mongoose": "^6.2.4"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.2.4",
+    "nodemon": "^2.0.15"
   },
   "name": "restapi",
   "description": "��#\u0000 \u0000R\u0000e\u0000s\u0000t\u0000A\u0000p\u0000i\u0000\r\u0000 \u0000",
   "version": "1.0.0",
   "main": "index.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "dev": "nodemon src/sever.js"
   },
   "repository": {
     "type": "git",
