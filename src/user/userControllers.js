@@ -26,7 +26,8 @@ exports.listUsers = async (req, res) => {
 
 exports.login = async (req, res) => {
   try {
-    res.status(200).send({ user: req.user.username });
+    const token = await jwt.sign({_id: req.user._id}, process.env.SECRET);
+    res.status(200).send({ user: req.user.username, token });
   } catch (error) {
     console.log(error);
     res.status(500).send({ err: error.message });
@@ -53,6 +54,7 @@ exports.updatePassword = async (req, res ) =>{
 
 exports.deleteUser = async (req, res) => {
   try{
+    let 
     const deleteUser = await User.deleteOne({
       [req.params.filterKey]: req.params.filterVal});
     if(deleteUser.deletedCount > 0){
